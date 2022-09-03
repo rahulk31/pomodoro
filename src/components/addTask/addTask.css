@@ -1,0 +1,74 @@
+.add-task-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #323232;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  width: 250px;
+}
+
+.form-heading {
+  font-size: 1.2rem;
+}
+
+.input-field-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form-input {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  width: 90%;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  color: #d6d6d6;
+  font-family: inherit;
+  resize: none;
+}
+
+.form-label {
+  position: absolute;
+  top: 8px;
+  left: 15px;
+  font-size: 0.8rem;
+  pointer-events: none;  
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:focus).form-input:not(:placeholder-shown) ~ .form-label {
+  top: -0.45rem;
+  font-size: 0.7rem;
+  background-color: #323232;
+  color: #aba8a8;
+  transition: 0.2s ease-in;
+}
+
+.form-input:focus {
+  outline: 0.5px solid #facd47;
+}
+
+.btn-close-modal,
+.btn-close-modal-disabled {
+    border: none;
+    border-radius: 115px;
+    padding: 0.3rem 1rem;
+    margin: 1.5rem auto;
+    background-color: #facd47;
+    color: #1e1e1e;
+    cursor: pointer;
+}
+
+.btn-close-modal-disabled {
+  cursor: not-allowed;
+}

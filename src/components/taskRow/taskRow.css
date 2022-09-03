@@ -1,0 +1,34 @@
+.taskrow-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  background-color: #323232;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 20px;
+}
+
+.taskrow-left,
+.taskrow-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+Link {
+  text-decoration: none;
+  color: #d6d6d6;
+}
+
+.taskrow-icon {
+    cursor: pointer;
+    margin-right: 0.5rem;
+    color: #d6d6d6;
+}
