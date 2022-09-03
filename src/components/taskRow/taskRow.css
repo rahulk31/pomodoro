@@ -4,9 +4,10 @@
   align-items: center;
   width: 90%;
   background-color: #323232;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.8rem;
   margin-top: 1rem;
   border-radius: 20px;
+  border: 1px solid #464545;
 }
 
 .taskrow-left,
@@ -29,6 +30,6 @@ Link {
 
 .taskrow-icon {
     cursor: pointer;
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
     color: #d6d6d6;
 }

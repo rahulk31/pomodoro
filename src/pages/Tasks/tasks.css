@@ -7,6 +7,7 @@
   width: 100%;
   height: 100vh;
   color: #fff;
+  position: relative;
 }
 
 .tasks-panel-left,
@@ -16,6 +17,7 @@
   border-radius: 1.25rem;
   padding: 2rem 3rem;
   width: 350px;
+  border: 1px solid #464545;
 }
 
 .tasks-panel-left,
@@ -32,6 +34,7 @@
 
 .tasks-panel-right {
   position: relative;
+  margin-bottom: 4rem;
 }
 
 .tasks-panel-left .greeting,
@@ -106,24 +109,31 @@
 .tasks-panel-right .add-task {
   height: 1.5rem;
   width: 1.5rem;
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: 50%;
   background-color: #323232;
   color: #facd47;
+  border: 1px solid #464545;
 }
 
 @media screen and (max-width: 550px) {
   .tasks-main {
     flex-direction: column;
-    padding: 3rem auto;
+    padding: 3rem 0;
+    height: auto;
   }
 
   .tasks-panel-left,
   .tasks-panel-right {
     background-color: #1e1e1e;
-    height: 80%;
+    min-height: 400px;
     border-radius: 1.25rem;
-    padding: 2rem 3rem;
     width: 300px;
   }
+
+  .tasks-panel-right {
+    min-height: 500px;
+  }
+
+  
 }
