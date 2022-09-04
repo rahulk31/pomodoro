@@ -4,9 +4,10 @@
   align-items: center;
   gap: 2rem;
   background-color: #323232;
-  width: 100%;
+  width: calc(100% - 6rem);
   height: 100vh;
   color: #fff;
+  padding: 2rem 3rem;
 }
 
 .singletask-panel-left,
@@ -106,7 +107,6 @@
 @media screen and (max-width: 780px) {
     .singletask-main {
       flex-direction: column;
-      padding: 3rem 0;
       height: auto;
     }
   
