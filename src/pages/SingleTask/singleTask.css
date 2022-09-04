@@ -1,0 +1,123 @@
+.singletask-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: #323232;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+
+.singletask-panel-left,
+.singletask-panel-right {
+  background-color: #1e1e1e;
+  height: 60%;
+  border-radius: 1.25rem;
+  padding: 2rem 3rem;
+  width: 350px;
+  border: 1px solid #464545;
+}
+
+.singletask-panel-left .heading {
+  position: relative;
+}
+
+.singletask-panel-left .heading h1::after {
+  content: "";
+  width: 3rem;
+  height: 0.3rem;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #facd47;
+}
+
+.task-details-wrapper {
+    margin: 3rem auto;
+}
+
+.task-details-wrapper > * {
+    line-height: 1.8;
+}
+
+.highlight-primary {
+    color: #ecd48c;
+}
+
+.mode-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-mode {
+    border: 1px solid #464545;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    background-color: #323232;
+    color: #d6d6d6;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.btn-mode:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.timer-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%
+}
+
+.timer {
+    width: 80%;
+    text-align: center;
+}
+
+.timer-text {
+    font-size: 5rem;
+    font-family: 'Chakra Petch', sans-serif;
+    color: #facd47;
+}
+
+.timer-icon {
+    font-size: 1rem;
+    margin: 1rem 0.5rem;
+    padding: 0.5rem;
+    border: 1px solid #464545;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.timer-icon:hover {
+    box-shadow: 0 0 5px 2px #323232;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 780px) {
+    .singletask-main {
+      flex-direction: column;
+      padding: 3rem 0;
+      height: auto;
+    }
+  
+    .singletask-panel-left,
+    .singletask-panel-right {
+      background-color: #1e1e1e;
+      min-height: 300px;
+      border-radius: 1.25rem;
+      width: 300px;
+    }
+  
+    
+  }
+  

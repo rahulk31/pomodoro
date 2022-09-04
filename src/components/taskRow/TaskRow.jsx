@@ -24,9 +24,14 @@ const TaskRow = ({ task }) => {
           <p>{task.title}</p>
         </div>
         <div className="taskrow-right">
-          <Link to="/task/:id"><IoTimeOutline className="taskrow-icon" /></Link>
+          <Link to={`/task/${task.id}`}>
+            <IoTimeOutline className="taskrow-icon" />
+          </Link>
           <IoPencil className="taskrow-icon" />
-          <IoTrashOutline className="taskrow-icon" onClick={() => deleteTaskHandler(task.id)} />
+          <IoTrashOutline
+            className="taskrow-icon"
+            onClick={() => deleteTaskHandler(task.id)}
+          />
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} exact />
         <Route path="/tasks" element={<Tasks />} />
-        <Route path="/task/:id" element={<SingleTask />} />
+        <Route path="/task/:taskId" element={<SingleTask />} />
       </Routes>
     </>
   );
