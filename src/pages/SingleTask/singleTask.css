@@ -36,88 +36,88 @@
 }
 
 .task-details-wrapper {
-    margin: 3rem auto;
+  margin: 3rem auto;
 }
 
 .task-details-wrapper > * {
-    line-height: 1.8;
+  line-height: 1.8;
 }
 
 .highlight-primary {
-    color: #ecd48c;
+  color: #ecd48c;
 }
 
 .mode-cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .btn-mode {
-    border: 1px solid #464545;
-    padding: 0.5rem 1.2rem;
-    border-radius: 5px;
-    background-color: #323232;
-    color: #d6d6d6;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
+  border: 1px solid #464545;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  background-color: #323232;
+  color: #d6d6d6;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 .btn-mode:hover {
-    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .timer-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
 
 .timer {
-    width: 80%;
-    text-align: center;
+  width: 80%;
+  text-align: center;
 }
 
 .timer-text {
-    font-size: 5rem;
-    font-family: 'Chakra Petch', sans-serif;
-    color: #facd47;
+  font-size: 5rem;
+  font-family: "Chakra Petch", sans-serif;
+  color: #facd47;
 }
 
 .timer-icon {
-    font-size: 1rem;
-    margin: 1rem 0.5rem;
-    padding: 0.5rem;
-    border: 1px solid #464545;
-    border-radius: 5px;
-    cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #464545;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .timer-icon:hover {
-    box-shadow: 0 0 5px 2px #323232;
+  box-shadow: 0 0 5px 2px #323232;
 }
-
 
 /* Media Queries */
 
 @media screen and (max-width: 780px) {
-    .singletask-main {
-      flex-direction: column;
-      height: auto;
-    }
-  
-    .singletask-panel-left,
-    .singletask-panel-right {
-      background-color: #1e1e1e;
-      min-height: 300px;
-      border-radius: 1.25rem;
-      width: 300px;
-    }
-  
-    
+  .singletask-main {
+    flex-direction: column;
+    height: auto;
   }
-  
+
+  .singletask-panel-left,
+  .singletask-panel-right {
+    background-color: #1e1e1e;
+    min-height: 300px;
+    border-radius: 1.25rem;
+    width: 300px;
+  }
+
+  .timer-text {
+    font-size: 4rem;
+  }
+}
