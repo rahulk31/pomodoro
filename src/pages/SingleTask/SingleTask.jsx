@@ -8,48 +8,62 @@ import {
 
 import { useParams } from "react-router-dom";
 import { useTask } from "../../context/tasks-context";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const SingleTask = () => {
   const { taskId } = useParams();
   const { tasksDB } = useTask();
 
-  const [seconds, setSeconds] = useState(59);
-
   const task = tasksDB.filter((task) => task.id === taskId);
-  console.log(task.duration);
-  const [minutes, setMinutes] = useState(Number(task[0].duration) - 1);
+  const [minutes, setMinutes] = useState(Number(task[0].duration));
+  const [seconds, setSeconds] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const timerRef = useRef(null);
 
-  let timer;
   useEffect(() => {
-    timer = setInterval(() => {
-      setSeconds((seconds) => seconds - 1);
-
-      if (seconds === 0) {
-        setMinutes((minutes) => minutes - 1);
-        setSeconds(59);
+    if (isRunning) {
+      timerRef.current = setInterval(() => {
+        setSeconds((prevSeconds) => {
+          if (prevSeconds === 0) {
+            setMinutes((prevMinutes) => {
+              if (prevMinutes === 0) {
+                clearInterval(timerRef.current);
+                setIsRunning(false);
+                return 0;
+              }
+              return prevMinutes - 1;
+            });
+            return 59;
+          }
+          return prevSeconds - 1;
+        });
+      }, 1000);
+    } else {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
       }
-      console.log(minutes);
+    }
 
-      if(minutes === 0 && seconds === 0) {
-        clearInterval(timer);
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
       }
-      
-    }, 1000);
+    };
+  }, [isRunning]);
 
-    return () => clearInterval(timer);
-  }, [minutes, seconds]);
-
-
-  const rewindTimerHandler = () => {
-    setSeconds(60);
-    setMinutes(Number(task[0].duration) - 1);
-  }
+  const playTimerHandler = () => {
+    setIsRunning(true);
+  };
 
   const stopTimerHandler = () => {
-    clearInterval(timer);
-  }
+    setIsRunning(false);
+  };
+
+  const rewindTimerHandler = () => {
+    setIsRunning(false);
+    setMinutes(Number(task[0].duration));
+    setSeconds(0);
+  };
 
   return (
     <>
@@ -93,9 +107,18 @@ const SingleTask = () => {
               </h1>
             </div>
             <div className="timer-cta">
-              <IoPlayOutline className="timer-icon" />
-              <IoStopOutline className="timer-icon" onClick={stopTimerHandler}/>
-              <IoRefreshOutline className="timer-icon" onClick={rewindTimerHandler}/>
+              <IoPlayOutline
+                className="timer-icon"
+                onClick={playTimerHandler}
+              />
+              <IoStopOutline
+                className="timer-icon"
+                onClick={stopTimerHandler}
+              />
+              <IoRefreshOutline
+                className="timer-icon"
+                onClick={rewindTimerHandler}
+              />
             </div>
           </div>
         </div>
