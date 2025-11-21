@@ -63,10 +63,47 @@
   color: #d6d6d6;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .btn-mode:hover {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-mode.active {
+  background-color: #facd47;
+  color: #1e1e1e;
+  border-color: #facd47;
+  font-weight: 600;
+}
+
+.btn-back {
+  border: 1px solid #464545;
+  padding: 0.5rem 1.2rem;
+  border-radius: 5px;
+  background-color: #323232;
+  color: #d6d6d6;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: #464545;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  border: 1px solid #464545;
+}
+
+.error-message h2 {
+  color: #facd47;
+  margin-bottom: 1.5rem;
 }
 
 .timer-wrapper {
@@ -95,10 +132,82 @@
   border: 1px solid #464545;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .timer-icon:hover {
   box-shadow: 0 0 5px 2px #323232;
+  background-color: #464545;
+}
+
+.timer-icon.play:hover {
+  color: #4ade80;
+}
+
+.timer-icon.pause:hover {
+  color: #facd47;
+}
+
+.timer-icon.stop:hover {
+  color: #ef4444;
+}
+
+.timer-mode-indicator {
+  margin-bottom: 1rem;
+}
+
+.timer-mode-indicator h3 {
+  color: #ecd48c;
+  font-size: 1.2rem;
+}
+
+.timer-complete-message {
+  margin: 1rem 0;
+  padding: 0.8rem;
+  background-color: #facd47;
+  color: #1e1e1e;
+  border-radius: 8px;
+  font-weight: 600;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.timer-status {
+  margin-top: 1rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background-color: #464545;
+  color: #d6d6d6;
+}
+
+.status-badge.running {
+  background-color: #4ade80;
+  color: #1e1e1e;
+}
+
+.status-badge.paused {
+  background-color: #facd47;
+  color: #1e1e1e;
+}
+
+.status-badge.completed {
+  background-color: #ef4444;
+  color: #fff;
 }
 
 /* Media Queries */

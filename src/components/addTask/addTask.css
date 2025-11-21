@@ -6,16 +6,29 @@
   align-items: center;
   background-color: #323232;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: 10px;
   font-size: 0.9rem;
-  width: 250px;
+  width: 280px;
   border: 1px solid #464545;
-  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.1), -2px -2px 20px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.1),
+    -2px -2px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-heading {
   font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.error-banner {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 .input-field-container {
@@ -28,15 +41,36 @@
   margin-top: 1rem;
 }
 
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.input-row .input-field-container {
+  margin-top: 0.5rem;
+}
+
 .form-input {
   padding: 0.5rem 0.8rem;
-  border: none;
+  border: 1px solid #464545;
   width: 90%;
   border-radius: 8px;
   background-color: #1e1e1e;
   color: #d6d6d6;
   font-family: inherit;
   resize: none;
+  transition: all 0.2s ease;
+}
+
+.form-input.error {
+  border-color: #ef4444;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #facd47;
 }
 
 .form-label {
@@ -44,33 +78,48 @@
   top: 8px;
   left: 15px;
   font-size: 0.8rem;
-  pointer-events: none;  
+  pointer-events: none;
+  transition: all 0.2s ease;
+  background-color: transparent;
+  padding: 0 0.2rem;
 }
 
 .form-input:focus ~ .form-label,
 .form-input:not(:focus).form-input:not(:placeholder-shown) ~ .form-label {
-  top: -0.45rem;
+  top: -0.5rem;
   font-size: 0.7rem;
   background-color: #323232;
   color: #aba8a8;
-  transition: 0.2s ease-in;
 }
 
-.form-input:focus {
-  outline: 0.5px solid #facd47;
+.error-message {
+  color: #ef4444;
+  font-size: 0.7rem;
+  align-self: flex-start;
+  margin-left: 1rem;
+  margin-top: 0.2rem;
 }
 
-.btn-close-modal,
-.btn-close-modal-disabled {
-    border: none;
-    border-radius: 115px;
-    padding: 0.3rem 1rem;
-    margin: 1.5rem auto;
-    background-color: #facd47;
-    color: #1e1e1e;
-    cursor: pointer;
+.btn-close-modal {
+  border: none;
+  border-radius: 115px;
+  padding: 0.5rem 1.5rem;
+  margin: 1.5rem auto 0.5rem;
+  background-color: #facd47;
+  color: #1e1e1e;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.btn-close-modal-disabled {
+.btn-close-modal:hover:not(:disabled) {
+  background-color: #ecd48c;
+  transform: translateY(-2px);
+}
+
+.btn-close-modal:disabled {
+  background-color: #464545;
+  color: #aba8a8;
   cursor: not-allowed;
+  opacity: 0.6;
 }
